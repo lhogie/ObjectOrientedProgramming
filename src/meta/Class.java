@@ -18,7 +18,7 @@ public class Class extends ModelElement {
 		String s = "class " + name + " {\n";
 
 		for (var m : members) {
-			s += m.toString() + "\n";
+			s += "\t" + m.toString() + "\n";
 		}
 
 		s += "}";
@@ -32,4 +32,16 @@ public class Class extends ModelElement {
 			module.classes.add(this);
 		}
 	}
+	
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object m) {
+		return name.equals(((Class) m).name);
+	}
+
 }

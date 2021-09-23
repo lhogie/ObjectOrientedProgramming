@@ -14,11 +14,11 @@ public class Module extends ModelElement {
 		String s = "module " + name + " {\n";
 
 		for (var c : classes) {
-			s += c.toString() + "\n";
+			s += Utils.tabulate(c.toString(), 1) + "\n";
 		}
 
 		for (var m : subModules) {
-			s += m.toString() + "\n";
+			s += Utils.tabulate(m.toString(), 1) + "\n";
 		}
 
 		s += "}";
@@ -28,5 +28,15 @@ public class Module extends ModelElement {
 	public void setParent(Module m) {
 		parent = m;
 		parent.subModules.add(this);
+	}
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object m) {
+		return name.equals(((Module) m).name);
 	}
 }
