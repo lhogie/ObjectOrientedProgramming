@@ -13,29 +13,11 @@ public class Method extends Member {
 	}
 
 	@Override
-	public String toJava() {
-		String s = super.toJava() + "(";
-
-		for (int i = 0; i < parms.size(); ++i) {
-			s += parms.get(i).toJava();
-
-			if (i < parms.size() - 1) {
-				s += ", ";
-			}
-		}
-
-		s += s + ")";
+	public String toString() {
+		String s = super.toString() + "(" + Utils.list(parms, p -> p.toString()) + ")";
 
 		if (!exceptions.isEmpty()) {
-			s += "\n\tthrows ";
-
-			for (int i = 0; i < exceptions.size(); ++i) {
-				s += exceptions.get(i).name;
-
-				if (i < exceptions.size() - 1) {
-					s += ", ";
-				}
-			}
+			s += "\n\tthrows " + Utils.list(exceptions, e -> e.toString());
 		}
 
 		return s;

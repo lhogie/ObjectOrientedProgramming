@@ -10,15 +10,15 @@ public class Module extends ModelElement {
 	private Module parent;
 
 	@Override
-	public String toJava() {
+	public String toString() {
 		String s = "module " + name + " {\n";
 
 		for (var c : classes) {
-			s += c.toJava() + "\n";
+			s += c.toString() + "\n";
 		}
 
 		for (var m : subModules) {
-			s += m.toJava() + "\n";
+			s += m.toString() + "\n";
 		}
 
 		s += "}";

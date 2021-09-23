@@ -11,7 +11,7 @@ public class Declaration extends ModelElement {
 	}
 
 	@Override
-	public String toJava() {
+	public String toString() {
 		String s = "";
 
 		if (isFinal) {

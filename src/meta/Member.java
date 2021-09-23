@@ -11,14 +11,14 @@ public class Member extends Declaration {
 	}
 
 	@Override
-	public String toJava() {
+	public String toString() {
 		String s = "";
 
 		if (isStatic) {
 			s += "static ";
 		}
 
-		return s + visibility + " " + super.toJava();
+		return s + visibility + " " + super.toString();
 	}
 
 }

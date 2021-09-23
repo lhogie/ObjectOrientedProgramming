@@ -14,11 +14,11 @@ public class Class extends ModelElement {
 	}
 
 	@Override
-	public String toJava() {
+	public String toString() {
 		String s = "class " + name + " {\n";
 
 		for (var m : members) {
-			s += m.toJava() + "\n";
+			s += m.toString() + "\n";
 		}
 
 		s += "}";
