@@ -1,16 +1,24 @@
 package meta;
 
 public class Member extends Declaration {
-	public Member(MemberVisibility visibility, Class type, String name) {
+	public MemberVisibility visibility;
+	public boolean isStatic = false;
+
+	public Member(MemberVisibility visibility, boolean isStatic, Class type, String name) {
 		super(type, name);
 		this.visibility = visibility;
+		this.isStatic = isStatic;
 	}
-
-	public MemberVisibility visibility;
 
 	@Override
 	public String toJava() {
-		return visibility + " " + super.toJava();
+		String s = "";
+
+		if (isStatic) {
+			s += "static ";
+		}
+
+		return s + visibility + " " + super.toJava();
 	}
 
 }

@@ -12,13 +12,14 @@ public class Demo {
 		Class set = new Class(null, "set");
 
 		var c1 = new Class(m1, "aClass");
-		c1.members.add(new Attribute(MemberVisibility.PRIVATE, number, "someNumber"));
-		c1.members.add(new Attribute(MemberVisibility.MODULE, string, "someName"));
-		var m  =new Method(MemberVisibility.MODULE, string, "f");
+		c1.members.add(new Attribute(MemberVisibility.PRIVATE, false, number, "someNumber"));
+		c1.members.add(new Attribute(MemberVisibility.MODULE, false, string, "someName"));
+		c1.members.add(new Attribute(MemberVisibility.PUBLIC, true, string, "A_CONSTANT"));
+		var m = new Method(MemberVisibility.MODULE, false, string, "f");
 		m.parms.add(new Declaration(number, "parameter1"));
 		m.parms.add(new Declaration(list, "parameter2"));
 		c1.members.add(m);
-		
+
 		System.out.println(m1);
 	}
 }
