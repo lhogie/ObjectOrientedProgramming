@@ -6,9 +6,13 @@ import java.util.Set;
 public class Module extends ModelElement {
 	String name;
 	final Set<Class> classes = new HashSet<>();
-	final private Set<Module> subModules = new HashSet<>();
+	final  Set<Module> subModules = new HashSet<>();
 	private Module parent;
 
+	
+	public Module(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
 		String s = "module " + name + " {\n";

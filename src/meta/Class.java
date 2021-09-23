@@ -14,8 +14,15 @@ public class Class extends ModelElement {
 	private Module module;
 
 	public Class(Module module, String name) {
+		setName(name);
 		setModule(module);
-		this.name = name;
+	}
+
+	public void setName(String newName) {
+		if (!newName.matches("[A-Za-z_]+"))
+			throw new IllegalArgumentException();
+
+		this.name = newName;
 	}
 
 	@Override
