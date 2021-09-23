@@ -6,18 +6,13 @@ public class Demo {
 		var m2 = new Module();
 		var m3 = new Module();
 
-		Class number = new Class(null, "int");
-		Class string = new Class(null, "string");
-		Class list = new Class(null, "list");
-		Class set = new Class(null, "set");
-
 		var c1 = new Class(m1, "aClass");
-		c1.members.add(new Attribute(MemberVisibility.PRIVATE, false, number, "someNumber"));
-		c1.members.add(new Attribute(MemberVisibility.MODULE, false, string, "someName"));
-		c1.members.add(new Attribute(MemberVisibility.PUBLIC, true, string, "A_CONSTANT"));
-		var m = new Method(MemberVisibility.MODULE, false, string, "f");
-		m.parms.add(new Declaration(number, "parameter1"));
-		m.parms.add(new Declaration(list, "parameter2"));
+		c1.members.add(new Attribute(MemberVisibility.PRIVATE, false, Class.number, "someNumber"));
+		c1.members.add(new Attribute(MemberVisibility.MODULE, false, Class.string, "someName"));
+		c1.members.add(new Attribute(MemberVisibility.PUBLIC, true, Class.string, "A_CONSTANT"));
+		var m = new Method(MemberVisibility.MODULE, false, Class.string, "f");
+		m.parms.add(new Declaration(Class.number, "parameter1"));
+		m.parms.add(new Declaration(Class.list, "parameter2"));
 		c1.members.add(m);
 
 		System.out.println(m1);

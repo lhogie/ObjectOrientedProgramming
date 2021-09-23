@@ -4,6 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Class extends ModelElement {
+	public static final Class number = new Class(null, "int");
+	public static final Class string = new Class(null, "string");
+	public static final Class list = new Class(null, "list");
+	public static final Class set = new Class(null, "set");
+
 	String name;
 	final Set<Member> members = new HashSet<>();
 	private Module module;
@@ -32,7 +37,6 @@ public class Class extends ModelElement {
 			module.classes.add(this);
 		}
 	}
-	
 
 	@Override
 	public int hashCode() {
