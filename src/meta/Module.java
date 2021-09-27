@@ -8,7 +8,6 @@ public class Module extends ModelElement {
 	final Set<Class> classes = new HashSet<>();
 	final  Set<Module> subModules = new HashSet<>();
 	private Module parent;
-
 	
 	public Module(String name) {
 		this.name = name;
