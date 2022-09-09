@@ -1,4 +1,4 @@
-package meta;
+	package meta;
 
 import java.util.function.Consumer;
 
@@ -46,6 +46,7 @@ public class Model {
 	}
 
 	private void checkClassNames(Consumer<String> warnings) {
+		
 		for (var c : rootModule.classes) {
 			if (!c.name.matches("[A-Z_][a-zA-Z0-9_]*")) {
 				warnings.accept("bad class name: " + c.name);
