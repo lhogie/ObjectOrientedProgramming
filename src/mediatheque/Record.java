@@ -3,19 +3,20 @@ package mediatheque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Disk extends Titled {
-	private DiskType type;
+public class Record extends Titled {
+	private RecordType type;
+	
 	final List<Track> tracks = new ArrayList<>();
 
-	public Disk(DiskType type) {
+	public Record(RecordType type) {
 		setType(type);
 	}
 
-	public DiskType getType() {
+	public RecordType getType() {
 		return type;
 	}
 
-	public void setType(DiskType type) {
+	public void setType(RecordType type) {
 		if (type == null)
 			throw new IllegalArgumentException("you try to set a null disk type");
 

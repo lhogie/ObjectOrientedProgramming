@@ -1,4 +1,4 @@
-package data_structures;
+package data_structures.linked_list;
 
 public abstract class L3IAList {
 	public boolean isEmpty() {

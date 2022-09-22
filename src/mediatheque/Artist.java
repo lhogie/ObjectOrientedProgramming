@@ -8,19 +8,23 @@ import java.util.Set;
 public class Artist {
 	private String name;
 	final List<Work> works = new ArrayList<>();
+	private Set<Record> recordCache;
+	
+	
+	public Set<Record> findDisks(Mediatheque m) {
+		if (recordCache == null) {
+			recordCache = new HashSet<>();
 
-	public Set<Disk> findDisks(Mediatheque m) {
-		Set<Disk> disks = new HashSet<>();
-
-		for (var d : m.allDisks()) {
-			for (var t : d.tracks) {
-				if (t.involve(this)) {
-					disks.add(d);
+			for (var d : m.allRecords()) {
+				for (var t : d.tracks) {
+					if (t.involve(this)) {
+						recordCache.add(d);
+					}
 				}
 			}
 		}
 
-		return disks;
+		return recordCache;
 	}
 
 	public List<Work> getWorks() {

@@ -1,5 +1,5 @@
 package mediatheque;
 
-public enum DiskType {
+public enum RecordType {
 	album, EP, live, compilation
 }

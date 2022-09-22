@@ -7,11 +7,15 @@ public class Mediatheque {
 	String directorName;
 	String address;
 	
-	final Set<Disk> disks = new HashSet<>();
+	final Set<Record> records = new HashSet<>();
 	final Set<Artist> artists = new HashSet<>();
 
-	public Set<Disk> allDisks() {
-		return disks;
+	public Set<Record> allRecords() {
+		return records;
+	}
+	
+	public void addRecord(Record r) {
+		records.add(r);
 	}
 
 	public Artist lookup(String artistName) {
