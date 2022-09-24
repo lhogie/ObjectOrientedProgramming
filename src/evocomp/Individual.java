@@ -1,4 +1,5 @@
 package evocomp;
 
-public class Individual {
+public interface Individual {
+	Genome toGenome();
 }
