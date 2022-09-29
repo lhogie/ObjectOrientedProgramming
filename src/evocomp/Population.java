@@ -18,8 +18,8 @@ public abstract class Population<I> {
 		}
 	}
 
-	public int averageFitness() {
-		int sum = 0;
+	public double averageFitness() {
+		double sum = 0;
 
 		for (var i : individuals) {
 			sum += fitness(i);
