@@ -12,4 +12,6 @@ public class Session {
 	Teacher teacher;
 
 	SessionType type;
+	
+	StudentClass studentClass;
 }
